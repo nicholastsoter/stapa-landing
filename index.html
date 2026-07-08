@@ -294,7 +294,7 @@
             font-family: var(--serif);
             font-size: 2.75rem;
             font-weight: 400;
-            color: rgba(245,241,232,0.07);
+            color: rgba(245,241,232,0.35);
             line-height: 1;
             margin-bottom: 2rem;
         }
@@ -321,7 +321,7 @@
         .how-bg-img {
             position: absolute; inset: 0;
             background: url('images/mountain1.jpeg') center / cover no-repeat;
-            opacity: 0.1;
+            opacity: 0.35;
         }
         .how-gradient {
             position: absolute; inset: 0;
@@ -545,7 +545,7 @@
         .impact-bg-img {
             position: absolute; inset: 0;
             background: url('images/lake.jpeg') center / cover no-repeat;
-            opacity: 0.09;
+            opacity: 0.35;
         }
         .impact-gradient {
             position: absolute; inset: 0;
@@ -567,6 +567,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             padding-bottom: 3rem;
             margin-bottom: 2.5rem;
             border-bottom: 1px solid var(--border);
@@ -653,6 +655,10 @@
             .values-grid { grid-template-columns: 1fr 1fr; }
             .value-card { border-bottom: 1px solid var(--border); }
         }
+        @media (max-width: 860px) {
+            .footer-top { justify-content: center; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 1.25rem; text-align: center; }
+        }
         @media (max-width: 700px) {
             .container { padding: 0 1.25rem; }
             nav { padding: 1.1rem 1.25rem; }
@@ -665,8 +671,7 @@
             .steps { grid-template-columns: 1fr; }
             .product { padding: 6rem 0; }
             .impact { padding: 6rem 0; }
-            .footer-top { flex-direction: column; gap: 2rem; text-align: center; }
-            .footer-bottom { flex-direction: column; gap: 1.25rem; }
+            .footer-top { flex-direction: column; gap: 2rem; }
             .cta-group { flex-direction: column; align-items: center; }
         }
     </style>
@@ -692,13 +697,76 @@
         <h1>Serve.<br>Adventure.<br>Repeat.</h1>
         <p class="hero-sub">Service Gives Benefits</p>
         <div class="cta-group">
-            <a href="#product" class="btn btn-ghost">Pre-Order the Hat</a>
+            <a href="https://a.co/d/03WQIqYi" class="btn btn-ghost" target="_blank" rel="noopener">Order the Hat</a>
             <a href="#how-it-works" class="btn btn-primary">Earn Your Discount</a>
         </div>
     </div>
     <div class="scroll-indicator" aria-hidden="true">
         <span>Scroll</span>
         <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- ══ PRODUCT ═══════════════════════════════════════════ -->
+<section class="product" id="product">
+    <div class="container">
+        <div class="product-grid">
+            <div class="hat-wrap fade">
+                <img
+                    id="hat-img"
+                    class="hat-img"
+                    src="images/hat-beige.png"
+                    alt="STÅPÅ Hat in Desert Beige"
+                    loading="lazy"
+                >
+            </div>
+            <div class="product-info">
+                <span class="badge-new fade">New Release</span>
+                <h2 class="product-title fade d1">The STÅPÅ Hat</h2>
+                <div class="pricing fade d1">
+                    <span class="price-main">$35</span>
+                    <span class="price-service">$25 With 3 Hours of Service</span>
+                </div>
+                <div class="specs fade d2" role="list" aria-label="Product specifications">
+                    <span class="spec" role="listitem">100% Nylon</span>
+                    <span class="spec" role="listitem">~30g Ultralight</span>
+                    <span class="spec" role="listitem">5-Panel Construction</span>
+                    <span class="spec" role="listitem">Snap Closure</span>
+                    <span class="spec" role="listitem">Ergonomic Fit</span>
+                    <span class="spec" role="listitem">Trail Ready</span>
+                </div>
+                <p class="product-desc fade d2">Crafted from lightweight 100% nylon at just ~30 grams, the STÅPÅ Hat delivers optimal ventilation to keep you cool on long trail runs and summit pushes. A 5-panel construction offers a snug, ergonomic fit that stays put through any terrain, while the adjustable snap closure dials in the perfect fit for any head size. Whether you're trail running, hiking, or just moving through the world with purpose—this hat goes with you.</p>
+                <div class="fade d3">
+                    <p class="color-label">Color — <span id="color-name">Desert Beige</span></p>
+                    <div class="color-options" role="radiogroup" aria-label="Hat color">
+                        <button
+                            class="color-btn active"
+                            data-color="beige"
+                            data-src="images/hat-beige.png"
+                            data-label="Desert Beige"
+                            aria-checked="true"
+                            role="radio"
+                        >
+                            <span class="swatch swatch-beige" aria-hidden="true"></span>
+                            Desert Beige
+                        </button>
+                        <button
+                            class="color-btn"
+                            data-color="green"
+                            data-src="images/hat-green.png"
+                            data-label="Uintah Green"
+                            aria-checked="false"
+                            role="radio"
+                        >
+                            <span class="swatch swatch-green" aria-hidden="true"></span>
+                            Uintah Green
+                        </button>
+                    </div>
+                </div>
+                <a href="https://a.co/d/03WQIqYi" class="btn btn-primary fade d3" target="_blank" rel="noopener">Order Now</a>
+                <p class="product-note fade d4">Earn a discount by completing community service hours. Log your hours, submit proof, and receive a discount code when approved.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -797,69 +865,6 @@
     </div>
 </section>
 
-<!-- ══ PRODUCT ═══════════════════════════════════════════ -->
-<section class="product" id="product">
-    <div class="container">
-        <div class="product-grid">
-            <div class="hat-wrap fade">
-                <img
-                    id="hat-img"
-                    class="hat-img"
-                    src="images/hat-beige.png"
-                    alt="STÅPÅ Hat in Desert Beige"
-                    loading="lazy"
-                >
-            </div>
-            <div class="product-info">
-                <span class="badge-new fade">New Release</span>
-                <h2 class="product-title fade d1">The STÅPÅ Hat</h2>
-                <div class="pricing fade d1">
-                    <span class="price-main">$35</span>
-                    <span class="price-service">$25 With 3 Hours of Service</span>
-                </div>
-                <div class="specs fade d2" role="list" aria-label="Product specifications">
-                    <span class="spec" role="listitem">Ultralight ~30g</span>
-                    <span class="spec" role="listitem">UPF 50+</span>
-                    <span class="spec" role="listitem">Moisture-wicking</span>
-                    <span class="spec" role="listitem">Comfort Fit</span>
-                    <span class="spec" role="listitem">Durable Nylon</span>
-                    <span class="spec" role="listitem">Water Resistant</span>
-                </div>
-                <p class="product-desc fade d2">Built for the trail, designed for purpose. The STÅPÅ Hat combines premium materials with a minimal aesthetic for adventurers who believe in giving back. Durable ripstop construction, moisture-wicking sweatband, and an adjustable fit that's ready for any summit or service project.</p>
-                <div class="fade d3">
-                    <p class="color-label">Color — <span id="color-name">Desert Beige</span></p>
-                    <div class="color-options" role="radiogroup" aria-label="Hat color">
-                        <button
-                            class="color-btn active"
-                            data-color="beige"
-                            data-src="images/hat-beige.png"
-                            data-label="Desert Beige"
-                            aria-checked="true"
-                            role="radio"
-                        >
-                            <span class="swatch swatch-beige" aria-hidden="true"></span>
-                            Desert Beige
-                        </button>
-                        <button
-                            class="color-btn"
-                            data-color="green"
-                            data-src="images/hat-green.png"
-                            data-label="Uintah Green"
-                            aria-checked="false"
-                            role="radio"
-                        >
-                            <span class="swatch swatch-green" aria-hidden="true"></span>
-                            Uintah Green
-                        </button>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-primary fade d3">Order Now</a>
-                <p class="product-note fade d4">Earn a discount by completing community service hours. Log your hours, submit proof, and receive a discount code when approved.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ══ IMPACT ════════════════════════════════════════════ -->
 <section class="impact">
     <div class="impact-bg-img" aria-hidden="true"></div>
@@ -888,16 +893,11 @@
                 <li><a href="#mission">Mission</a></li>
             </ul>
             <div class="footer-social" aria-label="Social media">
-                <a href="#" aria-label="Instagram">Instagram</a>
-                <a href="#" aria-label="TikTok">TikTok</a>
+                <a href="https://www.instagram.com/stapagear" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p class="footer-copy">&copy; 2024 STÅPÅ. All rights reserved.</p>
-            <nav class="footer-legal" aria-label="Legal">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-            </nav>
         </div>
     </div>
 </footer>
@@ -954,13 +954,17 @@
         });
     });
 
-    // Smooth scroll for anchor links
+    // Smooth scroll with offset for fixed nav
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
+            const href = a.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const navHeight = document.getElementById('nav').offsetHeight;
+                const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         });
     });
